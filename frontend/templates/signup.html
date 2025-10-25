@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'candidatecss/signup.css' %}?v=2">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Create Your Profile</h1>
+  <div class="form">
+    <form action="" method="POST">
+      {%csrf_token %}
+      <div class="label">
+        <label for="name">Full name</label>
+      </div>
+      <div class="input">
+        <input type="text" name="name" id="name" placeholder="What is your name?" required>
+      </div>
+      <div class="label">
+        <label for="email">Email Id</label>
+      </div>
+      <div class="input">
+        <input type="email" name="email" id="email" placeholder="Tell us Your Email Id?" required>
+      </div>
+      <div class="label">
+        <label for="pass">Password</label>
+      </div>
+      <div class="input">
+        <input type="password" name="pass" id="pass" placeholder="Minimum 6 character" required>
+      </div>
+      <div class="label">
+        <label for="mobile_no">Mobile Number</label>
+      </div>
+      <div class="input">
+        <input type="text" name="mobile_no" id="mobile_no" placeholder="Enter your mobile number" required>
+      </div>
+      <button type="submit">Register now</button>
+      <p>Are you have account?<a href="{% url 'login' %}">login</a></p>
+    </form>
+    <p style="color: red;">{{error}}</p>
+  </div>
+</body>
+</html>

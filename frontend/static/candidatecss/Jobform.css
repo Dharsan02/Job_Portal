@@ -1,0 +1,157 @@
+/* General Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f0f6ff 0%, #ffffff 100%);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.site-logo {
+  color: #007bff;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(to right, #007bff, #00aaff);
+  color: white;
+}
+
+.hero h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 60px;
+}
+
+.job-form {
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #e6e6e6;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 22px;
+  color: #007bff;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Form Fields */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.job-form input,
+.job-form textarea,
+.job-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd4e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #f8faff;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.job-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.job-form input:focus,
+.job-form textarea:focus,
+.job-form select:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #006ae6, #004b99);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Footer */
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .job-form {
+    padding: 30px 25px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+}

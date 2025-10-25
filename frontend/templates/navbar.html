@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InternApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'candidatecss/navbar.css' %}?v=2">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrapper site-header__wrapper">
+    <div class="site-header__start">
+      <a href="#" class="brand">InternApp</a>
+    </div>
+
+    <div class="site-header__middle">
+      <nav class="nav">
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="#">Home</a></li>
+
+          <!-- Inline expanding search -->
+          <li class="nav__item search-container">
+            <form action="{% url 'home' %}" method="GET" class="search-form">
+              <input type="text" name="search" class="search-input" placeholder="Search Jobs...">
+              <button type="submit" class="search-button">Go</button>
+            </form>
+            <span class="search-icon" onclick="toggleSearch()">🔍</span>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-header__end">
+      <a class="button" href="{% url 'profileview' %}">Profile</a>
+    </div>
+  </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<script>
+function toggleSearch() {
+  const form = document.querySelector('.search-form');
+  form.classList.toggle('active');
+  const input = document.querySelector('.search-input');
+  if (form.classList.contains('active')) {
+    input.focus();
+  } else {
+    input.blur();
+  }
+}
+</script>
+
+</body>
+</html>

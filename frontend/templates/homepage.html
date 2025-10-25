@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'candidatecss/homepage.css' %}">
+  <title>Job Platform</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">JobPlatform</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+    <div class="nav-buttons">
+      <a href="{% url 'signup' %}" class="nav-btn">Candidate</a>
+      <a href="{% url 'company_signup' %}" class="nav-btn">Company</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="page-center" id="home">
+    <div class="Text">
+      <span class="animate-text"></span>
+    </div>
+    <div class="button">
+      <button><a href="{% url 'signup' %}">For Candidate</a></button>
+      <button><a href="{% url 'company_signup' %}">For Company</a></button>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>Why Choose Us?</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>Smart Matching</h3>
+        <p>Find the right job or candidate instantly using our intelligent matching system.</p>
+      </div>
+      <div class="card">
+        <h3>Verified Companies</h3>
+        <p>We connect you with trusted companies and real job opportunities.</p>
+      </div>
+      <div class="card">
+        <h3>Grow Your Career</h3>
+        <p>Access resources, tips, and workshops to boost your career growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p>"This platform helped me land my dream job in just 2 weeks!"</p>
+        <span>- Ananya, Candidate</span>
+      </div>
+      <div class="testimonial">
+        <p>"We found top talent quickly and efficiently. Highly recommend!"</p>
+        <span>- Rajesh, HR Manager</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Job Platform. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    const textLines = ["Find Talent", "Get Hired", "Grow Together"];
+    const span = document.querySelector(".animate-text");
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function typeErase() {
+      const currentText = textLines[lineIndex];
+
+      if (typing) {
+        span.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentText.length) {
+          typing = false;
+          setTimeout(typeErase, 1500);
+          return;
+        }
+      } else {
+        span.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          typing = true;
+          lineIndex = (lineIndex + 1) % textLines.length;
+        }
+      }
+      setTimeout(typeErase, typing ? 150 : 50);
+    }
+
+    typeErase();
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'candidatecss/login.css'  %}">
+</head>
+<body>
+
+  <h1>Login</h1>
+
+  <div class="page">
+    <div class="signup">
+      <h2>New to InternApp?</h2>
+      <p>✅ One-click Apply using your InternApp profile</p>
+      <p>✅ Get Personalized Internship Recommendations</p>
+      <p>✅ Showcase Your Profile to Top Recruiters and Companies</p>
+      <p>✅ Track Application Status in Real Time</p>
+
+      <button class="signup-btn">
+        <a href="{% url 'signup' %}">Sign Up</a>
+      </button>
+    </div>
+
+    <div class="form">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="label">
+          <label for="email">Email ID</label>
+        </div>
+        <div class="input">
+          <input type="email" name="email" id="email" placeholder="Enter Email Id" required>
+        </div>
+
+        <div class="label">
+          <label for="pass">Password</label>
+        </div>
+        <div class="input">
+          <input type="password" name="pass" id="pass" placeholder="Enter Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  <p class="error">{{ error }}</p>
+</body>
+</html>

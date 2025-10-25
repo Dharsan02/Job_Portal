@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'candidatecss/company_signup.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Create Your Profile</h1>
+  <div class="form">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="label">
+        <label for="name">Company Name</label>
+      </div>
+      <div class="input">
+        <input type="text" name="name" id="name" placeholder="Enter Your Comapny Name" required>
+      </div>
+      <div class="label">
+        <label for="email">Company Email Id</label>
+      </div>
+      <div class="input">
+        <input type="email" name="email" id="email" placeholder="Tell us Your Email Id?" required>
+      </div>
+      <div class="label">
+        <label for="mobile_no">Phone Number</label>
+      </div>
+      <div class="input">
+        <input type="text" name="mobile_no" id="mobile_no" placeholder="Enter your phone number" required>
+      </div>
+      <div class="label">
+        <label for="location">Location</label>
+      </div>
+      <div class="input">
+        <input type="text" name="location" id="location" placeholder="Enter Company Location" required>
+      </div>
+      <div class="label">
+        <label for="industry_type">Industry Type</label>
+      </div>
+      <div class="input">
+        <input type="text" name="industry_type" id="industry_type" placeholder="Enter your industry type " required>
+      </div>
+      <div class="label">
+        <label for="password">Password</label>
+      </div>
+      <div class="input">
+        <input type="password" name="password" id="password" placeholder="Minimum 6 character" required>
+      </div>
+      <button type="submit">Register now</button>
+      <p>Are you have account?<a href="{% url 'company_login' %}">login</a></p>
+    </form>
+    <p style="color: red;">{{error}}</p>
+  </div>
+</body>
+</html>

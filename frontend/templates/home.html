@@ -1,0 +1,32 @@
+{% extends "navbar.html" %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'candidatecss/post.css' %}?v=2">
+  <h1>Internship</h1>
+  {% for i in data %}
+  <div class="postpage">
+    <div class="role">
+      <h3>{{i.role}}</h3>
+    </div>
+    <div class="name">
+      <h5>{{i.company_name}}</h5>
+    </div>
+    <div class="loc">
+      <h5>{{i.location}}</h5>
+    </div>
+    <div class="desc">
+      <h5>{{i.description}}</h5>
+    </div>
+    <div class="skills">
+      <h5>{{i.skills}}</h5>
+    </div>
+    <div class="date">
+      <h5>{{i.date_posted}}</h5>
+    </div>
+    <div class="read">
+      <button><a href="{% url 'read' i.id%}" style="text-underline-offset: unset;">Read More</a></button>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

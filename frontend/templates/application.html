@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'candidatecss/application.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  <div class="form">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="label">
+        <label for="name">Name</label>
+      </div>
+      <div class="input">
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="label">
+        <label for="email">Email Id </label>
+      </div>
+      <div class="input">
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+      </div>
+       <div class="label">
+        <label for="mobile_no">Mobile No</label>
+      </div>
+      <div class="input">
+        <input type="text" name="mobile_no" id="mobile_no" placeholder="+91XXXXXXXXXX" required>
+      </div>
+      <div class="label">
+        <label for="exp">Experience</label>
+      </div>
+      <div class="input">
+        <input type="text" name="exp" id="exp" placeholder="0 yr" required>
+      </div>
+       <div class="label">
+        <label for="location">Location</label>
+      </div>
+      <div class="input">
+        <input type="text" name="location" id="location" required placeholder="Chennai,Tamilnadu">
+      </div>
+      <div class="label">
+        <label for="resume">Resume</label>
+      </div>
+      <div class="input">
+        <input type="file" name="resume" id="resume" required>
+      </div>
+      <div class="button">
+      <button type="submit">Submit</button>
+      </div>      
+    </form>
+  </div>
+</body>
+</html>

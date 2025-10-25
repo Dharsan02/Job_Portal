@@ -1,0 +1,43 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'candidatecss/post.css' %}?v=2">
+  <title>Document</title>
+</head>
+<body>
+  <div class="postpage">
+    <div class="role">
+      <h3>{{data.role}}</h3>
+    </div>
+    <div class="name">
+      <h5>{{data.company_name}}</h5>
+    </div>
+    <div class="loc">
+      <h5>{{data.location}}</h5>
+    </div>
+    <div class="desc">
+      <h3>Job Description</h3>
+      <h5>{{data.description}}</h5>
+    </div>
+    <div class="resp">
+      <h3>Key Responsbility</h3>
+      <h5>{{data.responsiablity}}</h5>
+    </div>
+    <div class="exp">
+      <h5>{{data.experience}}</h5>
+    </div>
+    <div class="skills">
+      <h5>{{data.skills}}</h5>
+    </div>
+    <div class="date">
+      <h5>{{data.date_posted}}</h5>
+    </div>
+    <div class="read">
+      <button><a href="{% url 'apply' data.id %}">Apply</a></button>
+    </div>
+  </div>
+</body>
+</html>

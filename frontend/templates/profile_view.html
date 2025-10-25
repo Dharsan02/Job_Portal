@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="{% static 'candidatecss/profile_view.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="profile-container">
+      <div class="profile-title">
+        <h2>{{ data.user.username }}</h2>
+        <p class="profile-sub">{{ data.location|default:"No Location Added" }}</p>
+      </div>
+    <div class="profile-grid">
+
+      <div class="info-section">
+        <h3><i class="fa-solid fa-user"></i> Personal Info</h3>
+        <p><strong>Email:</strong> {{ data.user.email }}</p>
+        <p><strong>Mobile:</strong> {{ data.user.mobile_no }}</p>
+        <p><strong>Summary:</strong> {{ data.summary|default:"Not provided" }}</p>
+      </div>
+
+      <div class="info-section">
+        <h3><i class="fa-solid fa-briefcase"></i> Professional Info</h3>
+        <p><strong>Experience:</strong> {{ data.experience|default:"Not provided" }}</p>
+        <p><strong>Education:</strong> {{ data.education|default:"Not provided" }}</p>
+        <p><strong>Projects:</strong> {{ data.projects|default:"Not provided" }}</p>
+      </div>
+
+      <div class="info-section full-width">
+        <h3><i class="fa-solid fa-toolbox"></i> Skills</h3>
+          {% if data.skills %}
+            <p>{{ data.skills }}</p>
+          {% else %}
+            <p>Not Provided</p>
+          {% endif %}
+        </div>
+
+      <div class="info-section full-width">
+        <h3><i class="fa-solid fa-file"></i> Resume</h3>
+        {% if data.resume %}
+          <a class="resume-btn" href="{{ data.resume.url }}" target="_blank">📄 View / Download Resume</a>
+        {% else %}
+          <p>Not Uploaded</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <a href="{% url 'profileupd' data.user.id %}" class="btn-primary">Update Profile</a>
+    </div>
+
+  </div>
+</body>
+</html>

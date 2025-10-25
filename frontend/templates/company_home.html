@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InternApp | Job Platform</title>
+  <link rel="stylesheet" href="{% static 'candidatecss/company_home.css' %}?v=3">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="site-logo">InternApp</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Empowering Companies, Connecting Talent</h2>
+      <p>Join InternApp and simplify your hiring process. Post jobs, find skilled candidates, and grow your business — all in one place.</p>
+      <a href="#plans" class="hero-btn">View Plans</a>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="cards" id="plans">
+    <div class="card">
+      <h2>Paid Plan</h2>
+      <h4>50 USD</h4>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> Unlimited Job Posting Access</li>
+        <li><i class="fa-solid fa-check"></i> Direct Chat with Candidates</li>
+        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+      </ul>
+      <button class="cta-btn premium-btn">Get Premium</button>
+    </div>
+
+    <div class="card">
+      <h2>Free Plan</h2>
+      <h4>No Cost</h4>
+      <ul>
+        <li><i class="fa-solid fa-check"></i> 3 Posts Per Week</li>
+        <li><i class="fa-solid fa-xmark"></i> No Direct Messaging</li>
+        <li><i class="fa-solid fa-check"></i> Standard Support</li>
+      </ul>
+      <button class="cta-btn free-btn"><a href="{% url 'job_post' %}" style="text-decoration: none;">Free</a></button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-us">
+    <h3>About InternApp</h3>
+    <p>InternApp connects employers with talented students and job seekers eager to learn and contribute. We help startups and enterprises find the right interns and employees quickly, efficiently, and affordably.</p>
+    
+    <p>Our platform ensures transparent communication, verified candidate profiles, and powerful hiring tools that make recruitment effortless. With AI-driven recommendations, InternApp saves you time and helps you focus on growth.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h3>What Companies Say</h3>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>“InternApp made hiring so easy! We found amazing interns in less than a week.”</p>
+        <span>— TechNova Inc.</span>
+      </div>
+      <div class="testimonial">
+        <p>“A seamless experience. Great platform for startups to discover fresh talent.”</p>
+        <span>— BrightLabs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 InternApp. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>

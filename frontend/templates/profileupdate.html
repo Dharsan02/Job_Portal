@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Update Profile</title>
+  <link rel="stylesheet" href="{% static 'candidatecss/profileupdate.css' %}">
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <div class="card-header">
+        <div class="logo">PF</div>
+        <div>
+          <h1>Update Profile</h1>
+          <p class="lead">Edit your personal & candidate details — changes are saved to your account.</p>
+        </div>
+      </div>
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- USER FIELDS -->
+        <div class="left-col">
+          <div>
+            <label for="first_name">Name</label>
+            <input type="text" id="first_name" name="name" value="{{ data.user.get_full_name|default:data.user.username }}">
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ data.user.email }}">
+          </div>
+
+          <div>
+            <label for="mobile_no">Mobile Number</label>
+            <input type="text" id="mobile_no" name="mobile_no" value="{{ data.user.mobile_no|default:'' }}">
+          </div>
+
+          <div>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" value="{{ data.location }}">
+          </div>
+
+          <div>
+            <label for="experience">Experience</label>
+            <input type="text" id="experience" name="experience" value="{{ data.experience  }}">
+          </div>
+
+          <div>
+            <label for="skills">Skills</label>
+            <input type="text" id="skills" name="skills" value="{{ data.skills  }}">
+          </div>
+          <div>
+            <label for="education">Education</label>
+            <input type="text" id="education" name="education" value="{{ data.education }}">
+          </div>
+          <div>
+            <label for="projects">Projects</label>
+            <input type="text" id="projects" name="projects" value="{{ data.projects  }}">
+          </div>
+          <div>
+            <label for="summary">Summary</label>
+            <input type="text" id="summary" name="summary" value="{{ data.summary }}">
+          </div>
+          <div>
+            <label for="resume">Resume</label>
+            <input type="file" id="resume" name="resume" value="{{ data.resume }}">
+          </div>
+          <div class="button">
+            <button type="submit">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
