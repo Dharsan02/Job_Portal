@@ -1,0 +1,137 @@
+/* General Body Styling */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Title */
+h1 {
+  margin-top: 20px;
+  color: #222;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Card Container */
+.postpage {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  height: auto;
+  max-width: 1000px;
+  border: 1px solid #e6e6e6;
+  padding: 16px;
+  margin: 12px 0;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover Shadow Effect */
+.postpage:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Role / Job Title */
+.role h3 {
+  font-size: 20px;
+  color: #111;
+  margin: 0 0 6px 0;
+}
+
+/* Company and Location Text */
+.name h5,
+.loc h5 {
+  margin: 2px 0;
+  color: #555;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+/* Description Text */
+.desc h5 {
+  font-size: 15px;
+  color: #333;
+  margin: 6px 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;  /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Skills Styling */
+.skills h5 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #3366cc;
+  margin: 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skills h5 span {
+  background-color: #e6f0ff;
+  border-radius: 4px;
+  font-size: 13px;
+  padding: 3px 6px;
+}
+
+/* Date Styling */
+.date h5 {
+  color: #777;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+/* Read More Button */
+.read {
+  margin-top: 6px;
+}
+
+.read a {
+  text-decoration: none;
+}
+
+.read button {
+  border: 1px solid #6a5acd;
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 5px 10px;
+  color: #6a5acd;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.read button:hover {
+  background-color: #ede9ff;
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  .postpage {
+    padding: 12px;
+  }
+
+  .desc h5 {
+    font-size: 14px;
+    -webkit-line-clamp: 1;
+  }
+
+  .skills h5 {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}

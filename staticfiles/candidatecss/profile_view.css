@@ -1,0 +1,100 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef5ff;
+  margin: 0;
+}
+
+.profile-container {
+  max-width: 850px;
+  background: white;
+  margin: 50px auto;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 2px solid #f0f4ff;
+  padding-bottom: 15px;
+}
+
+.profile-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+}
+
+.profile-title h2 {
+  margin: 0;
+  color: #003d99;
+  font-size: 24px;
+}
+
+.profile-sub {
+  margin: 4px 0 0;
+  color: #535353;
+}
+
+.profile-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.info-section {
+  background: #f8faff;
+  padding: 18px;
+  border-radius: 10px;
+  border-left: 4px solid #007bff;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.info-section h3 {
+  margin-top: 0;
+  color: #0056b3;
+}
+
+.skill-tag {
+  background: #007bff;
+  color: white;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 15px;
+  margin: 4px;
+  display: inline-block;
+}
+
+.resume-btn {
+  text-decoration: none;
+  background: #0056b3;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
