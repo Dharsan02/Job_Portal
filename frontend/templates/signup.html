@@ -36,9 +36,14 @@
       <div class="input">
         <input type="text" name="mobile_no" id="mobile_no" placeholder="Enter your mobile number" required>
       </div>
+      <div class="button">
       <button type="submit">Register now</button>
-      <p>Are you have account?<a href="{% url 'login' %}">login</a></p>
+      </div>
+      <h3 style="text-align: center;">OR</h3>
     </form>
+      <div class="button2">
+        <button><a href="{% url 'login' %}" class="login-btn" style="color: aliceblue;"><b>Login</b></a></button>
+      </div>
     <p style="color: red;">{{error}}</p>
   </div>
 </body>
