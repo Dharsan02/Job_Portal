@@ -8,7 +8,7 @@ urlpatterns=[
   path('apply/<int:jobid>',application,name='apply'),
   path('profileview/',profileview,name='profileview'),
   path('updateprofile/<int:userid>/',profileupdated,name="profileupd"),
-  path('internapp/',homepage,name="internapp")
+  path('',homepage,name="internapp")
 ]
 
 
